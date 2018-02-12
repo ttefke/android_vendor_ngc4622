@@ -21,4 +21,7 @@
         <!-- The standard AOSP fused location provider -->
         <item>com.android.location.fused</item>
     </string-array>
+
+    <!-- Enable lockscreen rotation by default -->
+    <bool name="config_enableLockScreenRotation">false</bool>
 </resources>
