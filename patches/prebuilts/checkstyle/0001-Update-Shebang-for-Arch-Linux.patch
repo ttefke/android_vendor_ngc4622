@@ -1,0 +1,34 @@
+From a40c3805b50f81e9cc88db3a3aa6f4e49992a4f9 Mon Sep 17 00:00:00 2001
+From: Tobias Tefke <tobias.tefke@gmail.com>
+Date: Sun, 11 Mar 2018 09:41:18 +0100
+Subject: [PATCH] Update Shebang for Arch Linux
+
+Change-Id: Ie12bba30b211e6f5ea178a45925c76651ee4080d
+---
+ checkstyle.py | 2 +-
+ tests.py      | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/checkstyle.py b/checkstyle.py
+index 97c4e93..9a958bb 100755
+--- a/checkstyle.py
++++ b/checkstyle.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python2
+ 
+ #
+ # Copyright 2015, The Android Open Source Project
+diff --git a/tests.py b/tests.py
+index 74b325e..5274521 100755
+--- a/tests.py
++++ b/tests.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python2
+ 
+ #
+ # Copyright 2015, The Android Open Source Project
+-- 
+2.16.2
+
