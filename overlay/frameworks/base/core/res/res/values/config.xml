@@ -24,4 +24,8 @@
 
     <!-- Enable lockscreen rotation by default -->
     <bool name="config_enableLockScreenRotation">false</bool>
+
+    <!-- Force-enable the location overlays -->
+    <bool name="config_enableNetworkLocationOverlay" translatable="false">true</bool>
+    <bool name="config_enableFusedLocationOverlay" translatable="false">true</bool>
 </resources>
