@@ -1,0 +1,22 @@
+From e9bdaab9fbbc8d0e96f6ca65cd4c3e72fb7f9be1 Mon Sep 17 00:00:00 2001
+From: Tobias Tefke <tobias.tefke@gmail.com>
+Date: Sat, 17 Mar 2018 18:24:48 +0100
+Subject: [PATCH] Source ngc4622 envsetup
+
+Change-Id: Ib313a4a72a1f6b17770da308bd2adee85ebbf238
+---
+ envsetup.sh | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/envsetup.sh b/envsetup.sh
+index 2987b134a..0ce99fded 100644
+--- a/envsetup.sh
++++ b/envsetup.sh
+@@ -1750,3 +1750,4 @@ addcompletions
+ export ANDROID_BUILD_TOP=$(gettop)
+ 
+ . $ANDROID_BUILD_TOP/vendor/lineage/build/envsetup.sh
++. $ANDROID_BUILD_TOP/vendor/ngc4622/build/envsetup.sh
+-- 
+2.16.2
+
