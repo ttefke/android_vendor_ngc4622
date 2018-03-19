@@ -24,6 +24,15 @@ for dir in $patchdir ; do
     git am $CWD/$patchdir/*.patch
 done
 
+# Include overlay with lineage overlays
+patchdir="vendor/lineage"
+
+for dir in $patchdir ; do
+    cd $TOP
+    cd $patchdir
+    git am $CWD/$patchdir/*.patch
+done
+
 # Update checkstyle for Arch Linux
 if [ -f "/etc/arch-release" ]; then
     patchdir="prebuilts/checkstyle"
