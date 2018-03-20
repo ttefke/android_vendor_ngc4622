@@ -6,8 +6,7 @@ PRODUCT_PACKAGES += \
 
 # F-Droid privileged extension
 PRODUCT_PACKAGES += \
-    FDroidPrivilegedExtension \
-    permissions_org.fdroid.fdroid.privileged.xml
+    FDroidPrivilegedExtension
 
 # microg
 PRODUCT_PACKAGES += \
@@ -18,6 +17,12 @@ PRODUCT_PACKAGES += \
     OpenWeatherMapWeatherProvider \
     NominatimNlpBackend \
     com.google.android.maps.jar \
-    com.google.android.maps.xml \
     10-mapsapi.sh \
     80-fdroid.sh
+
+# Privileged permissions whitelists
+LOCAL_PACKAGES += \
+    privapp-permissions-org.fdroid.fdroid.privileged.xml \
+    privapp-permissions-com.android.vending.xml \
+    privapp-permissions-com.google.android.gms.xml \
+    com.google.android.maps.xml
