@@ -9,4 +9,4 @@ if [ -f "/etc/arch-release" ]; then
 fi
 
 # Build su
-WITH_SU := true
+export WITH_SU=true
