@@ -7,3 +7,6 @@ if [ -f "/etc/arch-release" ]; then
     ln -s /usr/lib/python2.7/* $ANDROID_BUILD_TOP/tools/arch/python/lib/python2.7/ &> /dev/null
     export USE_CLANG_PLATFORM_BUILD=true
 fi
+
+# Build su
+WITH_SU := true
