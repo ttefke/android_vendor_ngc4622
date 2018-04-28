@@ -15,7 +15,10 @@ PRODUCT_PACKAGES += \
     FakeStore \
     OpenBmapNlpBackend \
     OpenWeatherMapWeatherProvider \
+    MozillaNlpBackend \
     NominatimNlpBackend \
+    WundergroundWeatherProvider \
+    YahooWeatherProvider \
     com.google.android.maps.jar \
     10-mapsapi.sh \
     80-fdroid.sh
