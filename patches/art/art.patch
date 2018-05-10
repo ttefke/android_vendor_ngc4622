@@ -1,0 +1,30 @@
+From 9ae10014bb58c334ac977dcad774acc0dc1d8cac Mon Sep 17 00:00:00 2001
+From: Tobias Tefke <tobias.tefke@gmail.com>
+Date: Thu, 8 Feb 2018 13:02:45 +0100
+Subject: [PATCH] runtime: gc: collector: fix compile on Arch Linux
+
+Change-Id: Id75d241a34a60c3ecab2e06f00bc6bb1936c7e61
+---
+ runtime/gc/collector/mark_sweep.h | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/runtime/gc/collector/mark_sweep.h b/runtime/gc/collector/mark_sweep.h
+index f4c7ba6..bc64b61 100644
+--- a/runtime/gc/collector/mark_sweep.h
++++ b/runtime/gc/collector/mark_sweep.h
+@@ -356,7 +356,11 @@ class MarkSweep : public GarbageCollector {
+   class CardScanTask;
+   class CheckpointMarkThreadRoots;
+   class DelayReferenceReferentVisitor;
+-  template<bool kUseFinger> class MarkStackTask;
++#ifdef BUILD_ON_ARCH_LINUX
++  template<bool> class MarkStackTask;
++#else
++  template<bool kUseFinger> class MarkStackTask;  
++#endif
+   class MarkObjectSlowPath;
+   class RecursiveMarkTask;
+   class ScanObjectParallelVisitor;
+--
+libgit2 0.27.0
+

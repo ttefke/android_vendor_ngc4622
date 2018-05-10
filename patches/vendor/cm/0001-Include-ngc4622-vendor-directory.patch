@@ -1,0 +1,24 @@
+From afbe5c4725b2278343e331fc1ea089360865bf85 Mon Sep 17 00:00:00 2001
+From: Tobias Tefke <tobias.tefke@gmail.com>
+Date: Mon, 19 Mar 2018 20:13:56 +0100
+Subject: [PATCH] Include ngc4622 vendor directory
+
+Change-Id: I8838447b3a139e1cfb813264f5eeca68b9409769
+---
+ config/common.mk | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/config/common.mk b/config/common.mk
+index 55d1dac8..19176697 100644
+--- a/config/common.mk
++++ b/config/common.mk
+@@ -360,5 +360,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
+ -include $(WORKSPACE)/build_env/image-auto-bits.mk
+ -include vendor/cm/config/partner_gms.mk
+ -include vendor/cyngn/product.mk
++-include vendor/ngc4622/config/*.mk
+ 
+ $(call prepend-product-if-exists, vendor/extra/product.mk)
+-- 
+2.17.0
+
