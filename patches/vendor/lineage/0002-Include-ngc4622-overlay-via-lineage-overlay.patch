@@ -1,7 +1,7 @@
-From 844db61714dc571e921fb9a60d4e536d95d1993d Mon Sep 17 00:00:00 2001
-From: Tobias Tefke <tobias.tefke@gmail.com>
+From f3443cb6de1bc29aabb1dde6ec74302b546f337a Mon Sep 17 00:00:00 2001
+From: Tobias Tefke <tobias.tefke@tutanota.com>
 Date: Mon, 19 Mar 2018 19:15:07 +0100
-Subject: [PATCH] Include ngc4622 overlay via lineage overlay
+Subject: [PATCH 2/2] Include ngc4622 overlay via lineage overlay
 
 Change-Id: I8c5587bd531cc87bc76f1ff6fe6078a2bd3bf59b
 ---
@@ -9,10 +9,10 @@ Change-Id: I8c5587bd531cc87bc76f1ff6fe6078a2bd3bf59b
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/config/common.mk b/config/common.mk
-index 44a6d6e2..a5aeed82 100644
+index 8a1af1ec..f716f0a0 100644
 --- a/config/common.mk
 +++ b/config/common.mk
-@@ -247,7 +247,8 @@ PRODUCT_PACKAGES += \
+@@ -240,7 +240,8 @@ PRODUCT_PACKAGES += \
  endif
  endif
  
@@ -20,8 +20,8 @@ index 44a6d6e2..a5aeed82 100644
 +DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/common \
 +                           vendor/ngc4622/overlay
  
- PRODUCT_VERSION_MAJOR = 15
- PRODUCT_VERSION_MINOR = 1
+ PRODUCT_VERSION_MAJOR = 16
+ PRODUCT_VERSION_MINOR = 0
 -- 
-2.16.2
+2.18.0
 

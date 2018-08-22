@@ -1,7 +1,7 @@
-From 6db58653ce12f46aa2aef34d4705441c10f0f0a5 Mon Sep 17 00:00:00 2001
-From: Tobias Tefke <tobias.tefke@gmail.com>
+From d2371ec2a8a35621e3cd64661ca0e4021a6ae0ec Mon Sep 17 00:00:00 2001
+From: Tobias Tefke <tobias.tefke@tutanota.com>
 Date: Mon, 19 Mar 2018 20:13:56 +0100
-Subject: [PATCH] Include ngc4622 vendor directory
+Subject: [PATCH 1/2] Include ngc4622 vendor directory
 
 Change-Id: I8838447b3a139e1cfb813264f5eeca68b9409769
 ---
@@ -9,10 +9,10 @@ Change-Id: I8838447b3a139e1cfb813264f5eeca68b9409769
  1 file changed, 1 insertion(+)
 
 diff --git a/config/common.mk b/config/common.mk
-index 732c91ab..c11904fa 100644
+index 390ab60d..8a1af1ec 100644
 --- a/config/common.mk
 +++ b/config/common.mk
-@@ -381,5 +381,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+@@ -362,5 +362,6 @@ endif
  
  -include $(WORKSPACE)/build_env/image-auto-bits.mk
  -include vendor/lineage/config/partner_gms.mk
@@ -20,5 +20,5 @@ index 732c91ab..c11904fa 100644
  
  $(call prepend-product-if-exists, vendor/extra/product.mk)
 -- 
-2.17.0
+2.18.0
 
