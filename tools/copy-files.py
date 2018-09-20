@@ -456,7 +456,6 @@ def copyProprietaryFiles(vendor_dir, sysImgLocation):
     allFiles = copyFiles
     allFiles.extend(buildFiles)
     allFiles.extend(removedFiles)
-    print(removedFiles)
     for element in allFiles:
         # skip sbin files
         if "sbin/" in element:
