@@ -444,7 +444,7 @@ def createDeviceVendorMk(path, year, vendor, device):
     print("Written {}-vendor.mk".format(device))
 
 """
-copyFiles(vendor_dir, sysImgLocation)
+copyProprietaryFiles(vendor_dir, sysImgLocation)
 
 vendor_dir: directory where the blobs are stored
 sysImgLocation: mount point of the system image
@@ -452,7 +452,7 @@ sysImgLocation: mount point of the system image
 copies the proprietary files from the system image
 to the vendor directory
 """
-def copyFiles(vendor_dir, sysImgLocation):
+def copyProprietaryFiles(vendor_dir, sysImgLocation):
     allFiles = copyFiles
     allFiles.extend(buildFiles)
     allFiles.extend(removedFiles)
@@ -539,7 +539,7 @@ createBoardConfigVendorMk(vendor_dir, year, vendor, device)
 createDeviceVendorMk(vendor_dir, year, vendor, device)
 
 # copy files
-copyFiles(vendor_dir, sysImgMountPoint)
+copyProprietaryFiles(vendor_dir, sysImgMountPoint)
 
 # unmount the sytem image
 unmountSystem()
