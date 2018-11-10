@@ -33,15 +33,4 @@ for dir in $patchdir ; do
     git am $vnddir/$patchdir/*.patch
 done
 
-# Update checkstyle for Arch Linux
-if [ -f "/etc/arch-release" ]; then
-    patchdir="prebuilts/checkstyle"
-
-    for dir in $patchdir ; do
-        cd $rootdir
-        cd $patchdir
-        git am $vnddir/$patchdir/*.patch
-    done
-fi
-
 cd $rootdir
