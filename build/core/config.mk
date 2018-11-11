@@ -1,4 +1,5 @@
-# Include microg packages
+ifeq ($(NGC_VENDOR),)
+$(warning ************* NGC_VENDOR is not disabled - installing ngc4622 vendor changes ***************************)
 
 # F-Droid
 PRODUCT_PACKAGES += \
@@ -29,3 +30,9 @@ LOCAL_PACKAGES += \
     privapp-permissions-com.android.vending.xml \
     privapp-permissions-com.google.android.gms.xml \
     com.google.android.maps.xml
+
+# NGC overlays
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/ngc4622/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/ngc4622/overlay
+
+endif # NGC_VENDOR

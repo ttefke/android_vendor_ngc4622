@@ -24,13 +24,4 @@ for dir in $patchdir ; do
     git am $vnddir/$patchdir/*.patch
 done
 
-# Include overlay with lineage overlays
-patchdir="vendor/lineage"
-
-for dir in $patchdir ; do
-    cd $rootdir
-    cd $patchdir
-    git am $vnddir/$patchdir/*.patch
-done
-
 cd $rootdir
