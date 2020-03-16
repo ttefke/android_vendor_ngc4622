@@ -1,13 +1,10 @@
-ifeq ($(NGC_VENDOR),)
-$(warning ************* NGC_VENDOR is not disabled - installing ngc4622 vendor changes ***************************)
+$(warning ************* installing my addons ***************************)
 
 # F-Droid
 PRODUCT_PACKAGES += \
-    FDroid
-
-# F-Droid privileged extension
-PRODUCT_PACKAGES += \
-    FDroidPrivilegedExtension
+    FDroid \
+    FDroidPrivilegedExtension \
+    additional_repos.xml
 
 # microg
 PRODUCT_PACKAGES += \
@@ -18,8 +15,9 @@ PRODUCT_PACKAGES += \
     OpenWeatherMapWeatherProvider \
     MozillaNlpBackend \
     NominatimNlpBackend \
-    WundergroundWeatherProvider \
-    YahooWeatherProvider \
+    LegacyNetworkLocation \
+    NetworkLocation \
+    UnifiedNlp \
     com.google.android.maps.jar \
     10-mapsapi.sh \
     80-fdroid.sh
@@ -34,5 +32,3 @@ LOCAL_PACKAGES += \
 # NGC overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/ngc4622/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/ngc4622/overlay
-
-endif # NGC_VENDOR

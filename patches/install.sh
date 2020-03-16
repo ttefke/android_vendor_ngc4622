@@ -16,3 +16,14 @@ for dir in $patchdir ; do
 done
 
 cd $rootdir
+
+# Source my configuration files
+patchdir="vendor/lineage"
+
+for dir in $patchdir ; do
+    cd $rootdir
+    cd $patchdir
+    git am $vnddir/$patchdir/*.patch
+done
+
+cd $rootdir

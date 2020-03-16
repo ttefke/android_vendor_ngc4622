@@ -1,4 +1,4 @@
-From 76cd55b28172d1309cc88c57c1e9de7cc11f6416 Mon Sep 17 00:00:00 2001
+From 8ec06ea33d74cddd302aa7ada353c62ea2bbc683 Mon Sep 17 00:00:00 2001
 From: Daniele Gobbetti <daniele+github@gobbetti.name>
 Date: Fri, 28 Oct 2016 20:46:25 +0200
 Subject: [PATCH] Allow location providers also outside of /system
@@ -12,16 +12,19 @@ Change-Id: Ieb75f824d9a6bca37ee98c6f75a3309c9ce741a1
  1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/services/core/java/com/android/server/ServiceWatcher.java b/services/core/java/com/android/server/ServiceWatcher.java
-index 2ff036be4b4..9141db2d542 100644
+index e3dc3b7a984..098d9985ef6 100644
 --- a/services/core/java/com/android/server/ServiceWatcher.java
 +++ b/services/core/java/com/android/server/ServiceWatcher.java
-@@ -92,8 +92,7 @@
-             String pkg = initialPackageNames.get(i);
+@@ -88,8 +88,7 @@ public class ServiceWatcher implements ServiceConnection {
+         for (String packageName : packageNames) {
              try {
-                 HashSet<Signature> set = new HashSet<Signature>();
--                Signature[] sigs = pm.getPackageInfo(pkg, PackageManager.MATCH_SYSTEM_ONLY
--                        | PackageManager.GET_SIGNATURES).signatures;
-+                Signature[] sigs = pm.getPackageInfo(pkg, PackageManager.GET_SIGNATURES).signatures;
-                 set.addAll(Arrays.asList(sigs));
-                 sigSets.add(set);
-             } catch (NameNotFoundException e) {
+                 Signature[] signatures = pm.getPackageInfo(packageName,
+-                        PackageManager.MATCH_SYSTEM_ONLY
+-                                | PackageManager.GET_SIGNATURES).signatures;
++                        PackageManager.GET_SIGNATURES).signatures;
+ 
+                 HashSet<Signature> set = new HashSet<>();
+                 Collections.addAll(set, signatures);
+-- 
+2.17.1
+
