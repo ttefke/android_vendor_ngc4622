@@ -4,8 +4,6 @@ function setupJack() {
     ram=$(grep MemTotal /proc/meminfo | awk '{print $2}')
     # convert to gb
     ram=$(expr $ram / 1000000)
-    ram=$(expr $ram \* 8)
-    ram=$(expr $ram / 10)
     # add gb sign
     g="G"
     ram="$ram$g"
@@ -16,8 +14,8 @@ function setupJack() {
 function mkd() {
     # get number of cores
     cores=$(nproc)
-    # 4 threads per core
-    threads=$(expr $cores \* 4)
+    # 1 thread per core
+    threads=$(expr $cores / 2)
     m -j$threads "$@"
 }
 
