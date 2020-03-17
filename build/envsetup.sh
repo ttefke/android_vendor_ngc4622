@@ -48,3 +48,5 @@ function dessert()
     fi
     return $?
 }
+
+export WITH_SU=true
