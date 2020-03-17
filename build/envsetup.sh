@@ -19,25 +19,8 @@ function mkd() {
     m -j$threads "$@"
 }
 
-#function setupCcache() {
-#    export USE_CCACHE=1
-#    echo "Enter location for cache files:"
-#    read location
-#    export CCACHE_DIR=$location
-#    echo "Enter max ccache size in GB:"
-#    read cachesize
-#    g="G"
-#    prebuilts/misc/linux-x86/ccache/ccache -M $cachesize$g
-#    export NGC_CCACHE_SETUP=1
-#}
-
 function dessert()
 {
-    # setup ccache
-#    if [ "$NGC_CCACHE_SETUP" != "1" ]; then
-#        setupCcache
-#    fi
-    # setup jack
     setupJack
     breakfast $*
     if [ $? -eq 0 ]; then
