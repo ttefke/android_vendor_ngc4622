@@ -11,20 +11,21 @@ function setupJack() {
     export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx$ram"
 }
 
-function mkd() {
-    # get number of cores
-    cores=$(nproc)
-    # 1 thread per core
-    threads=$(expr $cores / 2)
-    m -j$threads "$@"
-}
-
 function dessert()
 {
     setupJack
-    breakfast $*
+    echo "Removing old zip files"
+    rm signed-target_files.zip signed-ota_update.zip
+    breakfast $1
     if [ $? -eq 0 ]; then
-        mkd bacon
+        m -j$2 target-files-package otatools
+        ./build/tools/releasetools/sign_target_files_apks -o -d ~/.android-certs \
+            $OUT/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip \
+            signed-target_files.zip
+        ./build/tools/releasetools/ota_from_target_files -k ~/.android-certs/releasekey \
+            --block --backup=true \
+            signed-target_files.zip \
+            signed-ota_update.zip
     else
         echo "No such item in dessert menu. Try 'breakfast'"
         return 1
