@@ -1,3 +1,4 @@
+ifeq ($(NGC_VENDOR),)
 $(warning ************* installing my addons ***************************)
 
 # F-Droid
@@ -15,7 +16,6 @@ PRODUCT_PACKAGES += \
     OpenWeatherMapWeatherProvider \
     MozillaNlpBackend \
     NominatimNlpBackend \
-    LegacyNetworkLocation \
     NetworkLocation \
     UnifiedNlp \
     com.google.android.maps.jar \
@@ -32,3 +32,6 @@ LOCAL_PACKAGES += \
 # NGC overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/ngc4622/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/ngc4622/overlay
+else
+$(warning ************* not installing my addons ***************************)
+endif
