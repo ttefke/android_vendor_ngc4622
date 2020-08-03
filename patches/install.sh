@@ -15,6 +15,15 @@ for dir in $patchdir ; do
     git am $vnddir/$patchdir/*.patch
 done
 
+# Patch build/soong in order to avoid JDK errors
+patchdir="build/soong"
+
+for dir in $patchdir ; do
+    cd $rootdir
+    cd $patchdir
+    git am $vnddir/$patchdir/*.patch
+done
+
 # Apply microg patches
 patchdir="frameworks/base"
 

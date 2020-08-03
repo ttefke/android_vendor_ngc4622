@@ -1,0 +1,36 @@
+From 2a3cdc5d36b86a375f718b5f9aedb3a7e5a970e2 Mon Sep 17 00:00:00 2001
+From: Tobias Tefke <tobias@tefke.name>
+Date: Mon, 3 Aug 2020 18:44:09 +0200
+Subject: [PATCH] Avoid JDK errors
+
+Change-Id: I7a9452b447819b17b4bb99447e4e67f8bdef438a
+---
+ ui/build/java.go | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/ui/build/java.go b/ui/build/java.go
+index 473af01..621ef25 100644
+--- a/ui/build/java.go
++++ b/ui/build/java.go
+@@ -108,7 +108,7 @@ func checkJavaVersion(ctx Context, config Config) {
+ 		// Early access builds of OpenJDK 9 do not contain the string "openjdk" in the
+ 		// version name. TODO(tobiast): Reconsider once the OpenJDK 9 toolchain is stable.
+ 		// http://b/62123342
+-		if !strings.Contains(java_version, "openjdk") && !experimental_use_openjdk9 {
++		/*if !strings.Contains(java_version, "openjdk") && !experimental_use_openjdk9 {
+ 			ctx.Println("*******************************************************")
+ 			ctx.Println("You are attempting to build with an unsupported JDK.")
+ 			ctx.Println()
+@@ -118,7 +118,8 @@ func checkJavaVersion(ctx Context, config Config) {
+ 			ctx.Println("    https://source.android.com/source/initializing.html")
+ 			ctx.Println("*******************************************************")
+ 			ctx.Fatalln("stop")
+-		}
++		}*/
++		ctx.Println("Avoided JDK error")
+ 	} else { // darwin
+ 		if strings.Contains(java_version, "openjdk") {
+ 			ctx.Println("*******************************************************")
+-- 
+2.17.1
+
