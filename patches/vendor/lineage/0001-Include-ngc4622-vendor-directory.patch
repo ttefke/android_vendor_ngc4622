@@ -1,4 +1,4 @@
-From 6db58653ce12f46aa2aef34d4705441c10f0f0a5 Mon Sep 17 00:00:00 2001
+From 8a42ae26f23dd9096a2ccf6b4341d085e49f6ca9 Mon Sep 17 00:00:00 2001
 From: Tobias Tefke <tobias.tefke@gmail.com>
 Date: Mon, 19 Mar 2018 20:13:56 +0100
 Subject: [PATCH] Include ngc4622 vendor directory
@@ -9,16 +9,14 @@ Change-Id: I8838447b3a139e1cfb813264f5eeca68b9409769
  1 file changed, 1 insertion(+)
 
 diff --git a/config/common.mk b/config/common.mk
-index 732c91ab..c11904fa 100644
+index 3f2c917e..77591394 100644
 --- a/config/common.mk
 +++ b/config/common.mk
-@@ -381,5 +381,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+@@ -364,3 +364,4 @@ endif
  
  -include $(WORKSPACE)/build_env/image-auto-bits.mk
  -include vendor/lineage/config/partner_gms.mk
 +-include vendor/ngc4622/config/*.mk
- 
- $(call prepend-product-if-exists, vendor/extra/product.mk)
 -- 
-2.17.0
+2.17.1
 
