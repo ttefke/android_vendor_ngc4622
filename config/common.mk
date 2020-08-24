@@ -1,33 +1,29 @@
 ifeq ($(NGC_VENDOR),)
 $(warning ************* installing my addons ***************************)
 
-# F-Droid
+# FDroid
 PRODUCT_PACKAGES += \
     FDroid \
     FDroidPrivilegedExtension \
-    additional_repos.xml
+    privapp-permissions-org.fdroid.fdroid.privileged.xml \
+    additional_repos.xml \
+    80-fdroid.sh
 
-# microg
+# microG
 PRODUCT_PACKAGES += \
     GmsCore \
     GsfProxy \
     FakeStore \
-    OpenBmapNlpBackend \
-    OpenWeatherMapWeatherProvider \
+    NetworkLocation \
     MozillaNlpBackend \
     NominatimNlpBackend \
-    NetworkLocation \
-    UnifiedNlp \
+    OpenBmapNlpBackend \
+    DroidGuard \
     com.google.android.maps.jar \
-    10-mapsapi.sh \
-    80-fdroid.sh
-
-# Privileged permissions whitelists
-LOCAL_PACKAGES += \
-    privapp-permissions-org.fdroid.fdroid.privileged.xml \
-    privapp-permissions-com.android.vending.xml \
+    com.google.android.maps.xml \
     privapp-permissions-com.google.android.gms.xml \
-    com.google.android.maps.xml
+    privapp-permissions-com.android.vending.xml \
+    10-mapsapi.sh
 
 # NGC overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/ngc4622/overlay
