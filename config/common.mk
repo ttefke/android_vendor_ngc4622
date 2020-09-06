@@ -14,9 +14,8 @@ PRODUCT_PACKAGES += \
     GmsCore \
     GsfProxy \
     FakeStore \
-    NetworkLocation \
     MozillaNlpBackend \
-    NominatimNlpBackend \
+    NominatimGeocoderBackend \
     OpenBmapNlpBackend \
     DroidGuard \
     com.google.android.maps.jar \
