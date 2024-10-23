@@ -6,23 +6,20 @@ PRODUCT_PACKAGES += \
     FDroid \
     FDroidPrivilegedExtension \
     privapp-permissions-org.fdroid.fdroid.privileged.xml \
-    additional_repos.xml \
-    80-fdroid.sh
+    additional_repos.xml
 
 # microG
 PRODUCT_PACKAGES += \
-    GmsCore \
-    GsfProxy \
     FakeStore \
-    MozillaNlpBackend \
-    NominatimGeocoderBackend \
-    OpenBmapNlpBackend \
-    DroidGuard \
-    com.google.android.maps.jar \
-    com.google.android.maps.xml \
-    privapp-permissions-com.google.android.gms.xml \
     privapp-permissions-com.android.vending.xml \
-    10-mapsapi.sh
+    default-permissions-com.android.vending.xml \
+    GmsCore \
+    privapp-permissions-com.google.android.gms.xml \
+    default-permissions-com.google.android.gms.xml \
+    sysconfig-com.google.android.gms.xml \
+    GsfProxy \
+    IchnaeaNlpBackend \
+    NominatimGeocoderBackend
 
 # NGC overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/ngc4622/overlay
